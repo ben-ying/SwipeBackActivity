@@ -27,14 +27,16 @@ public class SwipeBackActivity extends AppCompatActivity
         implements SlidingPaneLayout.PanelSlideListener {
 
     private static final String SCREENSHOT = "screenshot.jpg";
+    private static final int DEFAULT_TRANSLATE_X = 300;
+    private static final int DEFAULT_SHADOW_WIDTH = 20;
 
     private File mImageFile;
     private SlidingLayout mSlidingLayout;
     private FrameLayout mFrameLayout;
     private ImageView mBackImageView;
     private ImageView mShadowImageView;
-    private int mTranslationX;
-    private int mShadowWidth;
+    private int mTranslationX = DEFAULT_TRANSLATE_X;
+    private int mShadowWidth = DEFAULT_SHADOW_WIDTH;
     private int mShadowRes = R.drawable.shadow;
     private boolean mSlideEnable = true;
     private int mWidth;
@@ -97,19 +99,19 @@ public class SwipeBackActivity extends AppCompatActivity
 
     // override before onCreate()
     public void setShadowWidth(int dp) {
-        this.mShadowWidth = dip2px(dp);
+        this.mShadowWidth = dp;
     }
 
     public float getShadowWidth() {
-        return mShadowWidth <= 0 ? 30 : mShadowWidth;
+        return mShadowWidth <= 0 ? DEFAULT_SHADOW_WIDTH : mShadowWidth;
     }
 
-    public void setTranslationX(int dp) {
-        this.mTranslationX = dip2px(dp);
+    public void setTranslationX(int translationX) {
+        this.mTranslationX = translationX;
     }
 
     public float getTranslationX() {
-        return mTranslationX <= 0 ? dip2px(100) : mTranslationX;
+        return mTranslationX <= 0 ? DEFAULT_TRANSLATE_X : mTranslationX;
     }
 
     public void setSwipeSize(int dp) {

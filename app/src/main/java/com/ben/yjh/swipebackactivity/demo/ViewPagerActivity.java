@@ -22,7 +22,7 @@ public class ViewPagerActivity extends SwipeBackActivity {
         setContentView(R.layout.activity_view_pager);
 
         setTitle(getClass().getSimpleName());
-        setTranslationX(200);
+        setTranslationX(300);
         setSwipeSize(60);
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
