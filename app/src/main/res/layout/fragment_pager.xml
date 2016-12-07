@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn"
-        android:text="new Activity"
+    <TextView
+        android:id="@+id/tv_label"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        android:text="Activity2"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

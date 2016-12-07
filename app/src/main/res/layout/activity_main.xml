@@ -2,13 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
+    android:background="@android:color/darker_gray"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ben.yjh.swipebackactivity.demo.MainActivity">
 
-    <Button
-        android:id="@+id/btn"
-        android:text="new Activity"
+    <TextView
+        android:id="@+id/tv_label"
+        android:text="Activity1"
+        android:background="@android:color/white"
+        android:padding="10dp"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

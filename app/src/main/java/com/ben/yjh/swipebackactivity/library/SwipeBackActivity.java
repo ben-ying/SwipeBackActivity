@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -61,7 +62,7 @@ public class SwipeBackActivity extends AppCompatActivity
 
         mBackImageView = new ImageView(this);
         mBackImageView.setLayoutParams(new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+                FrameLayout.LayoutParams.MATCH_PARENT, mHeight));
 
         LinearLayout containerLayout = new LinearLayout(this);
         containerLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -135,6 +136,11 @@ public class SwipeBackActivity extends AppCompatActivity
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -226,6 +232,7 @@ public class SwipeBackActivity extends AppCompatActivity
                 decorView.destroyDrawingCache();
                 FileOutputStream out = new FileOutputStream(mImageFile);
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 80, out);
+
             } catch (OutOfMemoryError e) {
                 e.printStackTrace();
             }
