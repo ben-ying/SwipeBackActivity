@@ -22,4 +22,7 @@ public class HomeActivity extends SwipeBackActivity {
   }
 }
 ```
+Screenshot
+-----
+![image](http://github.com/ben-ying/SwipeBackActivity/raw/master/screenshot/swipe-back-activity.gif)
 
